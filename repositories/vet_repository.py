@@ -12,6 +12,19 @@ def save(vet):
     vet.id = results[0]['id']
     return vet
 
+def select(id):
+    vet = None
+    sql = "SELECT * from vets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        vet = Vet(result['first_name'], result['surname'], result['id'])
+    return vet
+
+
+
 
 
 

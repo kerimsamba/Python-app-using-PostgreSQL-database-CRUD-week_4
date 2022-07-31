@@ -25,8 +25,10 @@ vet1 = Vet("James", "Herriot")
 owner_repository.save(owner1)
 vet_repository.save(vet1)
 pet_repository.save(pet1, vet1.id, owner1.id)
+pet_repository.save(pet2, vet1.id, owner1.id)
 
-pet_repository.select(1)
+
+# pet_repository.select(pet1)
 
 
 

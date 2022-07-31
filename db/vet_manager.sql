@@ -26,19 +26,3 @@ CREATE TABLE pets (
 
 
 
-
--- CREATE TABLE visits (
---   id SERIAL PRIMARY KEY,
---   user_id INT REFERENCES users(id) ON DELETE CASCADE,
---   location_id INT NOT NULL REFERENCES locations(id) ON DELETE CASCADE,
---   review TEXT
--- );
-
--- name, dob, type, treatment_notes, vet_id = None, owner_id = None, id = None):
---         self.name = name
---         self.dob = dob
---         self.type = type
---         self.treatment_notes = treatment_notes
---         self.vet_id = vet_id
---         self.owner_id = owner_id
---         self.id = id

@@ -12,4 +12,15 @@ def save(owner):
     owner.id = results[0]['id']
     return owner
 
+def select(id):
+    owner = None
+    sql = "SELECT * from owners WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        owner = Owner(result['first_name'], result['surname'], result['id'])
+    return owner
+
 
