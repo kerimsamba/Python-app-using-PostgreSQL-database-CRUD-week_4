@@ -11,7 +11,9 @@ CREATE TABLE vets (
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
-    surname VARCHAR(255)
+    surname VARCHAR(255),
+    telephone VARCHAR(255),
+    email VARCHAR(255)
     );
 
 CREATE TABLE pets (

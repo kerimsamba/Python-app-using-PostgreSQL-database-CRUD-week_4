@@ -4,7 +4,13 @@
 
 <h2>Owner</h2>
 <p>
-    {{ owner.first_name }} {{ owner.surname}}
+    Name:  {{ owner.first_name }} {{ owner.surname}} 
+</p>
+<p>
+    Telephone: {{ owner.telephone}} 
+</p>
+<p>
+    Email: {{ owner.email }}
 </p>
 <h3>Pets:</h3>
 <p>
@@ -18,6 +24,7 @@
     </ul>
     {% endfor %}
 </p>
+
 
 {% endblock %}
 

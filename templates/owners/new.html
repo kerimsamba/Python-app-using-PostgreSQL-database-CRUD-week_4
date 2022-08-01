@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/owners" method="post">
+
+    <label for="first_name">First Name:</label>
+        <input type="text" name="first_name">
+
+    <label for="surname">Surname</label>
+        <input type="text" name="surname">
+
+        <button type="submit">Add Owner</button>
+
+
+
+{% endblock %}

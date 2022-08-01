@@ -19,6 +19,19 @@ def show(id):
     pets = pet_repository.select_all()
     return render_template("vets/show.html", vet=vet, pets=pets)
 
+@vets_blueprint.route("/vets/new")
+def new_vet():
+    return render_template("/vets/new.html")
+
+
+@vets_blueprint.route("/vets", methods=["POST"])
+def create_vet():
+    first_name = request.form["first_name"]
+    surname = request.form["surname"]
+    vet = Vet(first_name, surname)
+    vet_repository.save(vet)
+    return redirect("/vets")
+
 
 
 
