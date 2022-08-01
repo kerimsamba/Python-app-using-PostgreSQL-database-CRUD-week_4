@@ -23,4 +23,14 @@ def select(id):
         owner = Owner(result['first_name'], result['surname'], result['id'])
     return owner
 
+def select_all():
+    owners = []
+
+    sql = "SELECT * FROM owners"
+    results = run_sql(sql)
+    for row in results:
+        owner = Owner(row['first_name'], row['surname'], row['id'])
+        owners.append(owner)
+    return owners
+
 

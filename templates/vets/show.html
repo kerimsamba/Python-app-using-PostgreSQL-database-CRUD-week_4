@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Vet:</h2>
+    <p>
+        {{ vet.first_name}} {{ vet.surname}}
+    </p>
+<h3>Pets:</h3>
+    <p>
+        <ul>
+        {% for pet in pets %}
+            
+                {% if (pet.vet_id == vet.id) %}
+                <li>
+                    <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a>
+
+                </li>
+                {% endif %}
+            
+        
+        {% endfor %}
+    </ul>
+    </p>
+
+{% endblock %}

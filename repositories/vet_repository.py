@@ -23,6 +23,16 @@ def select(id):
         vet = Vet(result['first_name'], result['surname'], result['id'])
     return vet
 
+def select_all():
+    vets = []
+
+    sql = "SELECT * FROM vets"
+    results = run_sql(sql)
+    for row in results:
+        vet = Vet(row['first_name'], row["surname"], row["id"])
+        vets.append(vet)
+    return vets
+
 
 
 

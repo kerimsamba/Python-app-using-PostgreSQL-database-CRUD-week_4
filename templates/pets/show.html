@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>individual pet</h2>
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h2>Pet:</h2>
 
     <p>
-         {{ pet.name }}    {{ vet.name }}
+         {{ pet.name }}   
     </p>
-</body>
-</html>
+    <h3>Vet:</h3>
+    <p>
+        {{ vet.first_name}} {{ vet.surname }}
+    </p>
+    <h3>Owner:</h3>
+    <p>
+        {{ owner.first_name}} {{ owner.surname }}
+    </p>
+
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Vet list</h2>
+    <ul>
+        {% for vet in vets %}
+        <li>
+            <a href="/vets/{{ vet.id}}">{{ vet.first_name }} {{ vet.surname }} </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
