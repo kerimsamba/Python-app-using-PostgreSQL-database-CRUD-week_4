@@ -35,5 +35,10 @@ def select(id):
     return pet
 
 
-
+def vet_change(id, vet_id):
+    pet_id = id
+    new_vet_id = vet_id
+    values = [new_vet_id, pet_id]
+    sql = "UPDATE pets SET vet_id = %s WHERE id = %s"
+    run_sql(sql, values)
 

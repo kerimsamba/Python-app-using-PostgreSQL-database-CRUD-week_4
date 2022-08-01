@@ -19,10 +19,22 @@
     </p>
 
     <h3>Vet:</h3>
-    <p>
-        
-        {{ vet.first_name}} {{ vet.surname }}
-    </p>
+    
+        <Form action="/pets/{{pet.id}}" method="post">
+            <label for="vet"></label>
+            <select name="vet_id" id="">
+                {% for vet in vets %}
+                <option 
+                    {% if vet.id == pet.vet_id %}
+                        selected
+                    {% endif %}
+                        value="{{ vet.id }}">{{ vet.first_name }} {{ vet.surname }}</option>
+
+                {% endfor %}
+            </select>
+            <button type="submit">Submit new vet choice</button>
+        </Form>
+    
     <h3>Owner:</h3>
     <p>
         {{ owner.first_name}} {{ owner.surname }}
@@ -31,3 +43,4 @@
 
     
 {% endblock %}
+

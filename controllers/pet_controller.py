@@ -19,7 +19,7 @@ def show(id):
     vet = vet_repository.select(pet.vet_id)
     owner = owner_repository.select(pet.owner_id)
     vets = vet_repository.select_all()
-    return render_template("pets/show.html", pet=pet, vet=vet, owner=owner)
+    return render_template("pets/show.html", pet=pet, vet=vet, owner=owner, vets=vets)
 
 @pets_blueprint.route("/pets/new")
 def new_pet():
@@ -38,6 +38,12 @@ def create_pet():
     pet = Pet(name, dob, type, treatment_notes, vet_id, owner_id)
     pet_repository.save(pet)
     return redirect("/pets")
+
+@pets_blueprint.route("/pets/<id>", methods=["POST"])
+def change_vet(id):
+    vet_id = request.form["vet_id"]
+    pet_repository.vet_change(id, vet_id)
+    return redirect(f"/pets/{id}")
     
 
 
