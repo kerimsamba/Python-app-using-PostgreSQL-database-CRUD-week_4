@@ -7,20 +7,17 @@
         {{ vet.first_name}} {{ vet.surname}}
     </p>
 <h3>Current Patient Roster:</h3>
-    <p>
-        <ul>
-        {% for pet in pets %}
-            
-                {% if (pet.vet_id == vet.id) %}
-                <li>
-                    <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a>
+    <section class="columns">
 
-                </li>
+        {% for pet in pets %}
+        <ul>
+                {% if (pet.vet_id == vet.id) %}
+                
+                    <a href="/pets/{{ pet.id}}"><button class="button4">{{ pet.name }}</button> </a>
                 {% endif %}
-            
-        
+            </ul>
         {% endfor %}
-    </ul>
-    </p>
+
+</section>
 
 {% endblock %}

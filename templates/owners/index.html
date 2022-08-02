@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<body>
-    
 
-<h2>Owner Management</h2>
-<div class="columns">
-    {% for owner in owners %}
-    <ul>
-            <a href="/owners/{{ owner.id }}">{{ owner.first_name}}  {{ owner.surname}}</a> 
-            Current status :{{ owner.status }}
-    </ul>
+<body>
+
+
+    <h2>Owner Management</h2>
+    <div class="columns">
+        <ul>
+            {% for owner in owners %}
+            <p>
+                <a href="/owners/{{ owner.id }}"><button class="button3">{{ owner.first_name}} {{owner.surname}}</button></a>
+            </p>
+        {% endfor %}
+        </ul>
+    </div>
     <br>
-    {% endfor %}
-    <a href="/owners/new" ><button class="button2">Add a new owner</button></a>
-</div>
+    <a href="/owners/new"><button class="button2">Add a new owner</button></a>
+
 </body>
 {% endblock %}
-

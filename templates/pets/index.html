@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Pet Management</h1>
-    <div class="columns">
-    <p>
-        <ul>
-            {% for pet in pets %}
-            <li>
-                <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a> the {{ pet.type }}
-            </li>
-            {% endfor %}
-        </ul>
-    </p>
-</div>
-    <p>
-        <a href="/pets/new"><button class="button2">Add a new pet</button></a>
-    </p>
-{% endblock %}
+<h2>Pet Management</h2>
+<section class="columns">
+    <ul>
+        {% for pet in pets %}
+        <p>
+            <a href="/pets/{{ pet.id}}"><button class="button3">{{ pet.name }}</button> </a> the {{ pet.type }}
+        </p>
+        {% endfor %}
+    </ul>
+</section>
 
+<p>
+    <a href="/pets/new"><button class="button2">Add a new pet</button></a>
+</p>
+{% endblock %}

@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Vet Management</h2>
-    <ul>
-        {% for vet in vets %}
-        <li>
-            <a href="/vets/{{ vet.id}}">{{ vet.first_name }} {{ vet.surname }} </a>
-        </li>
-        {% endfor %}
-    </ul>
+<h2>Vet Management</h2>
+</section class="columns">
+<ul>
+    {% for vet in vets %}
     <p>
-        <a href="/vets/new" class="custom_button">Add a vet</a>
+        <a href="/vets/{{ vet.id}}"><button class="button3">{{ vet.first_name }} {{ vet.surname }}</button> </a>
     </p>
+    {% endfor %}
+</ul>
+</section>
+<p>
+    <a href="/vets/new"><button class="button2">Add a vet</button> </a>
+</p>
 
 {% endblock %}

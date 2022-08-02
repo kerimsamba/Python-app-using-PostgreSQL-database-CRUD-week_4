@@ -1,0 +1,28 @@
+.form_format {
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 1px 1px;
+    /* margin: 8px 0; */
+    box-sizing: border-box;
+    border-radius: 4px;
+    float: right;
+  }
+
+input[type=date] {
+    width: 50%;
+    padding: 1px 1px;
+    /* margin: 8px 0; */
+    box-sizing: border-box;
+    border-radius: 4px;
+    float: right;
+}
+
+select {
+    width: 50%;
+    border-radius: 4px;
+    float: right;
+}

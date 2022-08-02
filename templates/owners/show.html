@@ -17,21 +17,21 @@
 
 </p>
 
-<p>
-    <a href="/owners/edit/{{ owner.id}}"> Make changes</a>
-</p>
+
 <h3>Pets:</h3>
 <p>
     {% for pet in pets %}
 <ul>
     {% if (pet.owner_id == owner.id) %}
     <li>
-        <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a>
+        <a href="/pets/{{ pet.id}}"><button class="button4">{{ pet.name }}</button> </a>
     </li>
     {% endif %}
 </ul>
 {% endfor %}
 </p>
-
+<p>
+    <a href="/owners/edit/{{ owner.id}}"><button class="button2">Make changes</button> </a>
+</p>
 
 {% endblock %}
