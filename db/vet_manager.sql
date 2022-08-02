@@ -13,7 +13,8 @@ CREATE TABLE owners (
     first_name VARCHAR(255),
     surname VARCHAR(255),
     telephone VARCHAR(255),
-    email VARCHAR(255)
+    email VARCHAR(255),
+    status VARCHAR(255)
     );
 
 CREATE TABLE pets (

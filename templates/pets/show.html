@@ -3,44 +3,44 @@
 {% block content %}
 
 
-    <h2>Pet:</h2>
+<h2>Pet:</h2>
 
-    <p>
-        Name: {{ pet.name }}   
-    </p>
-    <p>
-        Type: {{ pet.type }}
-    </p>
-    <p>
-        Date of birth: {{ pet.dob }}
-    </p>
-    <p>
-        Treatment note: {{ pet.treatment_notes }}
-    </p>
+<p>
+    Name: {{ pet.name }}
+</p>
+<p>
+    Type: {{ pet.type }}
+</p>
+<p>
+    Date of birth: {{ pet.dob }}
+</p>
+<p>
+    Treatment note: {{ pet.treatment_notes }}
+</p>
 
-    <h3>Vet:</h3>
-    
-        <Form action="/pets/{{pet.id}}" method="post">
-            <label for="vet"></label>
-            <select name="vet_id" id="">
-                {% for vet in vets %}
-                <option 
-                    {% if vet.id == pet.vet_id %}
-                        selected
-                    {% endif %}
-                        value="{{ vet.id }}">{{ vet.first_name }} {{ vet.surname }}</option>
+<h3>Vet:</h3>
 
-                {% endfor %}
-            </select>
-            <button type="submit">Submit new vet choice</button>
-        </Form>
-    
-    <h3>Owner:</h3>
-    <p>
-        {{ owner.first_name}} {{ owner.surname }}
-    </p>
+<Form action="/pets/{{pet.id}}" method="post">
+    <label for="vet"></label>
+    <select name="vet_id" id="">
+        {% for vet in vets %}
+        <option {% if vet.id==pet.vet_id %} selected {% endif %} value="{{ vet.id }}">{{ vet.first_name }} {{
+            vet.surname }}</option>
+
+        {% endfor %}
+    </select>
+    <button type="submit">Submit new vet choice</button>
+</Form>
+
+<h3>Owner:</h3>
+<p>
+    <a href="/owners/{{owner.id}}">{{ owner.first_name}} {{ owner.surname }}</a>
+</p>
+
+<p>
+    <a href="/pets/edit/{{ pet.id}}"> Make changes</a>
+</p>
 
 
-    
+
 {% endblock %}
-

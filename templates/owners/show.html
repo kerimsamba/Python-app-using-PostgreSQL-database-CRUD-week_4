@@ -4,28 +4,34 @@
 
 <h2>Owner</h2>
 <p>
-    Name:  {{ owner.first_name }} {{ owner.surname}} 
+    Name: {{ owner.first_name }} {{ owner.surname}}
 </p>
 <p>
-    Telephone: {{ owner.telephone}} 
+    Telephone: {{ owner.telephone}}
 </p>
 <p>
     Email: {{ owner.email }}
 </p>
+<p>
+    Status: {{ owner.status }}
+
+</p>
+
+<p>
+    <a href="/owners/edit/{{ owner.id}}"> Make changes</a>
+</p>
 <h3>Pets:</h3>
 <p>
     {% for pet in pets %}
-    <ul>
-            {% if (pet.owner_id == owner.id) %}
-            <li>
-            <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a>
-            </li>
-            {% endif %}
-    </ul>
-    {% endfor %}
+<ul>
+    {% if (pet.owner_id == owner.id) %}
+    <li>
+        <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a>
+    </li>
+    {% endif %}
+</ul>
+{% endfor %}
 </p>
 
 
 {% endblock %}
-
-

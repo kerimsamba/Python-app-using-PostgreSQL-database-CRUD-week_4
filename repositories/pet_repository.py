@@ -42,3 +42,7 @@ def vet_change(id, vet_id):
     sql = "UPDATE pets SET vet_id = %s WHERE id = %s"
     run_sql(sql, values)
 
+def change(pet):
+    sql = "UPDATE pets SET name = %s, dob = %s, type = %s, treatment_notes = %s, vet_id = %s, owner_id = %s WHERE id = %s;"
+    values = [pet.name, pet.dob, pet.type, pet.treatment_notes, pet.vet_d, pet.owner.id, pet.id]
+    run_sql(sql, values)

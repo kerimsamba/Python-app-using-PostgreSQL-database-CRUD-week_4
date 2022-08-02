@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h2>List of owners</h2>
+<h2>Owner Management</h2>
 <p>
     {% for owner in owners %}
     <ul>
         <li>
-            <a href="/owners/{{ owner.id }}">{{ owner.first_name}}  {{ owner.surname}} </a>
+            <a href="/owners/{{ owner.id }}">{{ owner.first_name}}  {{ owner.surname}} {{ owner.id }}</a>
         </li>
     </ul>
     {% endfor %}

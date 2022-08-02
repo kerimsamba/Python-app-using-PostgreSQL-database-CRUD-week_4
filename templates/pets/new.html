@@ -3,45 +3,44 @@
 {% block content %}
 
 <form action="/pets" method="post">
-<ul>
-    <label for="name">Name:</label>
-    <input type="text" name="name">
-</ul>
-<ul>
-    <label for="dob">Date of birth:</label>
-    <input type="date" name="dob">
-</ul>
-<ul>
-    <label for="type">Type of animal:</label>
-    <input type="text" name="type">
-</ul>
-<ul>
-    <label for="treatment_notes">Treatment notes</label>
-    <input type="text" name="treatment_notes">
-</ul>
-<ul>
-    <label for="owner">Owner:</label>
-    <select name="owner_id" id="">
-        {% for owner in owners %}
-        <option value="{{ owner.id }}">{{ owner.first_name }} {{ owner.surname }}</option>
-        {% endfor %}
-    </select>
-</ul>
-<ul>
-    <label for="vet">Vet:</label>
-    <select name="vet_id" id="">
-        {% for vet in vets %}
-        <option value="{{ vet.id }}">{{ vet.first_name }} {{ vet.surname }}</option>
-        {% endfor %}
-    </select>
-</ul>
+    <ul>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+    </ul>
+    <ul>
+        <label for="dob">Date of birth:</label>
+        <input type="date" name="dob">
+    </ul>
+    <ul>
+        <label for="type">Type of animal:</label>
+        <input type="text" name="type">
+    </ul>
+    <ul>
+        <label for="treatment_notes">Treatment notes</label>
+        <input type="text" name="treatment_notes">
+    </ul>
+    <ul>
+        <label for="owner">Owner:</label>
+        <select name="owner_id" id="">
+            {% for owner in owners %}
+                <option value="{{ owner.id }}">{{ owner.first_name }} {{ owner.surname }}</option>
+            {% endfor %}
+
+        </select>
+    </ul>
+    <ul>
+        <label for="vet">Vet:</label>
+        <select name="vet_id" id="">
+            {% for vet in vets %}
+            <option value="{{ vet.id }}">{{ vet.first_name }} {{ vet.surname }}</option>
+            {% endfor %}
+        </select>
+    </ul>
 
 
-<ul>
-    <button type="submit">Add pet</button>
-</ul>
+    <ul>
+        <button type="submit">Add pet</button>
+    </ul>
 </form>
 
 {% endblock %}
-
-

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Owner details</h2>
+
+
+<section>
+
+    <form action="/owners/{{owner.id}}" method="post">
+        <ul>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value={{owner.first_name}}>
+        </ul>
+        <ul>
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" value="{{owner.surname}}">
+        </ul>
+        <ul>
+            <label for="telephone">Telephone</label>
+            <input type="text" name="telephone" value="{{owner.telephone}}">
+        </ul>
+        <ul>
+            <label for="email">Email</label>
+            <input type="text" name="email" value="{{owner.email}}">
+        </ul>
+        <ul>
+            <label for="status">Status</label>
+            <input type="text" name="status" value="{{owner.status}}">
+        </ul>
+        <input type="hidden" name="id" value="{{owner.id}}">
+        <ul>
+            <button type="submit">Make Changes</button>
+        </ul>
+
+        </form>
+</section>
+
+
+
+{% endblock %}

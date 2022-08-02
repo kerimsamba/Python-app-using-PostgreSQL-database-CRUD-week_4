@@ -3,15 +3,27 @@
 {% block content %}
 
 <form action="/owners" method="post">
-
-    <label for="first_name">First Name:</label>
+    <ul>
+        <label for="first_name">First Name:</label>
         <input type="text" name="first_name">
-
-    <label for="surname">Surname</label>
+    </ul>
+    <ul>
+        <label for="surname">Surname:</label>
         <input type="text" name="surname">
-
+    </ul>
+    <ul>
+        <label for="telephone">Telephone:</label>
+        <input type="text" name="telephone">
+    </ul>
+    <ul>
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+    </ul>
+    <ul>
         <button type="submit">Add Owner</button>
+    </ul>
 
 
 
-{% endblock %}
+
+    {% endblock %}
