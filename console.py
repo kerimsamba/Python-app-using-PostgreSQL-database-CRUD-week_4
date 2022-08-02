@@ -73,9 +73,11 @@ pet_repository.save(pet13)
 pet_repository.save(pet14)
 pet_repository.save(pet15)
 
+pet1.name = "Fluffy"
+pet_repository.change(pet1)
+found = pet_repository.select(pet1.id)
 
-# pet_repository.select(pet1)
-
+print(found.__dict__)
 
 
 

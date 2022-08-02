@@ -7,39 +7,45 @@
 
 <section>
 
-    <form action="/pets/{{pet.id}}" method="post">
-        <ul>
-            <label for="name">Name:</label>
-            <input type="text" name="name" value="{{ pet.name }}">
-        </ul>
-        <ul>
-            <label for="dob">Date of birth:</label>
-            <input type="date" name="dob" value="{{ pet.dob }}">
-        </ul>
-        <ul>
-            <label for="type">Type of animal:</label>
-            <input type="text" name="type" value="{{ pet.type }}">
-        </ul>
-        <ul>
-            <label for="treatment_notes">Treatment notes</label>
-            <input type="text" name="treatment_notes" value="{{ pet.treatment_notes }}">
-        </ul>
 
-        </ul>
-        <label for="vet"></label>
-        <select name="vet_id" id="">
-            {% for vet in vets %}
-            <option {% if vet.id==pet.vet_id %} selected {% endif %} value="{{ vet.id }}">{{ vet.first_name }} {{
-                vet.surname }}</option>
+    <form action="/pets/{{pet.id}}" method="post" class="form_format">
+        <fieldset>
+            <ul>
+                <ul>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" value="{{ pet.name }}">
+                </ul>
+                <ul>
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" name="dob" value="{{ pet.dob }}">
+                </ul>
+                <ul>
+                    <label for="type">Type of animal:</label>
+                    <input type="text" name="type" value="{{ pet.type }}">
+                </ul>
+                <ul>
 
-            {% endfor %}
-        </select>
-
-        </ul>
-        <input type="hidden" name="owner_id" value="{{pet.owner_id}}">
-        <input type="hidden" name="id" value="{{pet.id}}">
-        <ul>
-            <button type="submit">Make Changes</button>
+                    <label for="treatment_notes">Treatment notes</label>
+                    <input type="text" name="treatment_notes" value="{{ pet.treatment_notes }}">
+                </ul>
+                <ul>
+                    Vet:
+                    <label for="vet"></label>
+                    <select name="vet_id" id="">
+                        {% for vet in vets %}
+                        <option {% if vet.id==pet.vet_id %} selected {% endif %} value="{{ vet.id }}">{{ vet.first_name
+                            }} {{
+                            vet.surname }}</option>
+                        {% endfor %}
+                    </select>
+                </ul>
+                <ul>
+                    <input type="hidden" name="owner_id" value="{{pet.owner_id}}">
+                    <input type="hidden" name="id" value="{{pet.id}}">
+                    <button type="submit">Make Changes</button>
+                </ul>
+            </ul>
+        </fieldset>
     </form>
 </section>
 

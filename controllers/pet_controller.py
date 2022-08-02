@@ -39,11 +39,11 @@ def create_pet():
     pet_repository.save(pet)
     return redirect("/pets")
 
-@pets_blueprint.route("/pets/<id>", methods=["POST"])
-def change_vet(id):
-    vet_id = request.form["vet_id"]
-    pet_repository.vet_change(id, vet_id)
-    return redirect(f"/pets/{id}")
+# @pets_blueprint.route("/pets/<id>", methods=["POST"])
+# def change_vet(id):
+#     vet_id = request.form["vet_id"]
+#     pet_repository.vet_change(id, vet_id)
+#     return redirect(f"/pets/{id}")
     
 @pets_blueprint.route("/pets/edit/<id>")
 def edit(id):
@@ -55,6 +55,7 @@ def edit(id):
 @pets_blueprint.route("/pets/<id>", methods=["POST"])
 def change_pet_details(id):
     name = request.form["name"]
+    print(request.form)
     dob = request.form["dob"]
     type = request.form["type"]
     treatment_notes = request.form["treatment_notes"]

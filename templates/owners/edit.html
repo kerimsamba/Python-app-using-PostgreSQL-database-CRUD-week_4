@@ -7,7 +7,8 @@
 
 <section>
 
-    <form action="/owners/{{owner.id}}" method="post">
+    <form action="/owners/{{owner.id}}" method="post" class="form_format">
+        <fieldset>
         <ul>
             <label for="first_name">First Name:</label>
             <input type="text" name="first_name" value={{owner.first_name}}>
@@ -32,7 +33,7 @@
         <ul>
             <button type="submit">Make Changes</button>
         </ul>
-
+    </fieldset>
         </form>
 </section>
 

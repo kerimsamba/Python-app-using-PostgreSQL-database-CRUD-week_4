@@ -23,7 +23,6 @@ def select_all():
         pets.append(pet)
     return pets
 
-
 def select(id):
     pet = None
     sql = "SELECT * FROM pets WHERE id = %s"
@@ -34,15 +33,7 @@ def select(id):
         pet = Pet(result['name'], result['dob'], result['type'], result['treatment_notes'], result['vet_id'], result['owner_id'], result['id'])
     return pet
 
-
-def vet_change(id, vet_id):
-    pet_id = id
-    new_vet_id = vet_id
-    values = [new_vet_id, pet_id]
-    sql = "UPDATE pets SET vet_id = %s WHERE id = %s"
-    run_sql(sql, values)
-
 def change(pet):
     sql = "UPDATE pets SET name = %s, dob = %s, type = %s, treatment_notes = %s, vet_id = %s, owner_id = %s WHERE id = %s;"
-    values = [pet.name, pet.dob, pet.type, pet.treatment_notes, pet.vet_d, pet.owner.id, pet.id]
+    values = [pet.name, pet.dob, pet.type, pet.treatment_notes, pet.vet_id, pet.owner_id, pet.id]
     run_sql(sql, values)

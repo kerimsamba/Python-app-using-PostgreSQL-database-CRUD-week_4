@@ -5,31 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vet Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+
+
 </head>
 <body>
     <main>
     <nav>
         <ul>
-            <li>
-                <a href="/pets">Pets</a>
-            </li>
-            <li>
-                <a href="/vets">Vets</a>
-            </li>
-            <li>
-                <a href="/owners">Owner</a>
-            </li>
-            <li>
-            <a href="/">Home</a>
-        </li>
+    <a href="/pets"><button class="bigbutton">Pets</button></a>
+    <a href="/vets"><button class="bigbutton">Vets</button></a>
+    <a href="/owners"><button class="bigbutton">Owners</button></a>
+    <a href="/"><button class="bigbutton">Home</button></a>
       
         </ul>
     </nav>
+    <main>
+
     <section>
         {% block content %}
 
         {% endblock %}
     </section>
     </main>
+
 </body>
 </html>

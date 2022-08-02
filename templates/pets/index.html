@@ -2,18 +2,19 @@
 
 {% block content %}
     <h1>Pet Management</h1>
-    
+    <div class="columns">
     <p>
         <ul>
             {% for pet in pets %}
             <li>
-                <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a>
+                <a href="/pets/{{ pet.id}}"> {{ pet.name }}</a> the {{ pet.type }}
             </li>
             {% endfor %}
         </ul>
     </p>
+</div>
     <p>
-        <a href="/pets/new">Add a new pet</a>
+        <a href="/pets/new"><button class="button2">Add a new pet</button></a>
     </p>
 {% endblock %}
 

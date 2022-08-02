@@ -5,29 +5,21 @@
 <h2>Add New Vet</h2>
 
 
-<form action="/vets" method="post">
+<form action="/vets" method="post" class="form_format">
+    <fieldset>
+        <ul>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name">
+        </ul>
+        <ul>
+            <label for="surname">Surname</label>
+            <input type="text" name="surname">
+            <ul>
+                <button type="submit">Add Vet</button>
 
-    <label for="first_name">First Name:</label>
-        <input type="text" name="first_name">
-
-    <label for="surname">Surname</label>
-        <input type="text" name="surname">
-
-        <button type="submit">Add Vet</button>
-
-
+            </ul>
+        </ul>
+    </fieldset>
 </form>
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-  

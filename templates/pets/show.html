@@ -18,25 +18,12 @@
     Treatment note: {{ pet.treatment_notes }}
 </p>
 
-<h3>Vet:</h3>
-
-<Form action="/pets/{{pet.id}}" method="post">
-    <label for="vet"></label>
-    <select name="vet_id" id="">
-        {% for vet in vets %}
-        <option {% if vet.id==pet.vet_id %} selected {% endif %} value="{{ vet.id }}">{{ vet.first_name }} {{
-            vet.surname }}</option>
-
-        {% endfor %}
-    </select>
-    <button type="submit">Submit new vet choice</button>
-</Form>
-
-<h3>Owner:</h3>
 <p>
-    <a href="/owners/{{owner.id}}">{{ owner.first_name}} {{ owner.surname }}</a>
+    Owner: <a href="/owners/{{owner.id}}">{{ owner.first_name}} {{ owner.surname }}</a>
 </p>
-
+<p>
+    Vet: <a href="/vets/{{vet.id}}">{{ vet.first_name }} {{ vet.surname }}</a>
+</p>
 <p>
     <a href="/pets/edit/{{ pet.id}}"> Make changes</a>
 </p>
