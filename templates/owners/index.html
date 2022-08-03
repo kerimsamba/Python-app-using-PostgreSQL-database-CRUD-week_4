@@ -6,11 +6,14 @@
 
 
     <h2>Owner Management</h2>
+    <div class="text">
+Click to edit - dark blue are active
+    </div>
     <div class="columns">
         <ul>
             {% for owner in owners %}
             <p>
-                <a href="/owners/{{ owner.id }}"><button class="button3">{{ owner.first_name}}
+                <a href="/owners/{{ owner.id }}"><button class="button5 {{ owner.status }}">{{ owner.first_name}}
                         {{owner.surname}}</button></a>
             </p>
             {% endfor %}

@@ -24,7 +24,9 @@
             <label for="owner">Owner:</label>
             <select name="owner_id" id="">
                 {% for owner in owners %}
+                    {% if owner.status == "active" %}
                 <option value="{{ owner.id }}">{{ owner.first_name }} {{ owner.surname }}</option>
+                    {% endif %}
                 {% endfor %}
 
             </select>
@@ -40,7 +42,10 @@
 
 
         <ul>
-            <button type="submit">Add pet</button>
+            <button type="submit" class="button2" >Add pet</button>
+        </ul>
+        <ul>
+            Note: Inactive owners cannot be allocated to pets
         </ul>
     </fieldset>
 </form>
