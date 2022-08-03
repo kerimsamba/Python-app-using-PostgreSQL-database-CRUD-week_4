@@ -1,4 +1,3 @@
-DROP TABLE apppointments;
 DROP TABLE pets;
 DROP TABLE vets;
 DROP TABLE owners;
@@ -26,13 +25,6 @@ CREATE TABLE pets (
     treatment_notes TEXT,
     vet_id INT REFERENCES vets(id) ON DELETE CASCADE,
     owner_id INT REFERENCES owners(id) ON DELETE CASCADE
-);
-
-CREATE TABLE appointments (
-    id SERIAL PRIMARY KEY,
-    pet_id INT REFERENCES pets(id) ON DELETE CASCADE,
-    check_in DATE,
-    check_out DATE
 );
 
 
