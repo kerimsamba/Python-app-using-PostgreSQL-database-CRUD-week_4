@@ -10,9 +10,10 @@
         <ul>
             {% for owner in owners %}
             <p>
-                <a href="/owners/{{ owner.id }}"><button class="button3">{{ owner.first_name}} {{owner.surname}}</button></a>
+                <a href="/owners/{{ owner.id }}"><button class="button3">{{ owner.first_name}}
+                        {{owner.surname}}</button></a>
             </p>
-        {% endfor %}
+            {% endfor %}
         </ul>
     </div>
     <br>

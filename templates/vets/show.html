@@ -3,20 +3,25 @@
 {% block content %}
 
 <h2>Vet:</h2>
-    <p>
-        {{ vet.first_name}} {{ vet.surname}}
-    </p>
-<h3>Current Patient Roster:</h3>
-    <section class="columns">
+<table>
+    <tr>
+        <th>
+            {{ vet.first_name}} {{ vet.surname}}
+        </th>
+    </tr>
+</table>
 
-        {% for pet in pets %}
-        <ul>
-                {% if (pet.vet_id == vet.id) %}
-                
-                    <a href="/pets/{{ pet.id}}"><button class="button4">{{ pet.name }}</button> </a>
-                {% endif %}
-            </ul>
-        {% endfor %}
+<h3>Current Patient Roster:</h3>
+<section class="columns">
+
+    {% for pet in pets %}
+    <ul>
+        {% if (pet.vet_id == vet.id) %}
+
+        <a href="/pets/{{ pet.id}}"><button class="button4">{{ pet.name }}</button> </a>
+        {% endif %}
+    </ul>
+    {% endfor %}
 
 </section>
 

@@ -1,0 +1,22 @@
+table {
+    margin-left: 4%;
+
+    text-align: left;
+
+}
+
+.table1 th,
+.table1 td,
+.table1 tr th {
+    border: 1px solid;
+    border-collapse: collapse;
+    
+
+}
+
+
+
+.button_table {
+    border: 0px;
+}
+

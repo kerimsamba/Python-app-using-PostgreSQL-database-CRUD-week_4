@@ -4,30 +4,39 @@
 
 
 <h2>Pet:</h2>
+<section>
+<table class="table1">
+    <colgroup>
+        <col span="1" style="width: 200px;">
+        <col span="1" style="width: 200px;">
+        <col span="1" style="width: 200px;">
+        <col span="1" style="width: 430px;">
 
-<p>
-    Name: {{ pet.name }}
-</p>
-<p>
-    Type: {{ pet.type }}
-</p>
-<p>
-    Date of birth: {{ pet.dob }}
-</p>
-<p>
-    Treatment note: {{ pet.treatment_notes }}
-</p>
-
-<p>
-    Owner: <a href="/owners/{{owner.id}}"><button class="button3">{{ owner.first_name}} {{ owner.surname }}</button></a>
-</p>
-<p>
-    Vet: <a href="/vets/{{vet.id}}"><button class="button3">{{ vet.first_name }} {{ vet.surname }}</button></a>
-</p>
-<p>
-    <a href="/pets/edit/{{ pet.id}}"><button class="button2">Edit pet details</button></a>
-</p>
-
+      </colgroup>
+    <tr>
+        <th>Name:</th>
+        <th>Type:</th>
+        <th>Date of birth:</th>
+        <th>Treatment notes:</th>
+    </tr>
+    <tr>
+        <td>{{ pet.name }}</td>
+        <td>{{ pet.type }}</td>
+        <td>{{ pet.dob }}</td>
+        <td>{{ pet.treatment_notes }}</td>
+    </tr>
+</table>
+<br>
+<Table>
+    <tr>
+        <th>Owner:</th>
+        <th><a href="/owners/{{owner.id}}"><button class="button3">{{ owner.first_name}} {{ owner.surname }}</button></a></th>
+    </tr>
+    <tr>
+        <th>Vet:</th>
+        <th><a href="/vets/{{vet.id}}"><button class="button3">{{ vet.first_name }} {{ vet.surname }}</button></a></th>
+    </tr>
+</Table>
 
 
 {% endblock %}
